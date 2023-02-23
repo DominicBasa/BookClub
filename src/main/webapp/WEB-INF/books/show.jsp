@@ -23,9 +23,9 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
 	</head>
 	<body>
-    <!-- ${books} -->
+    ${books}
 		<div class="container">
-			<h1>Welcome <c:out value="${userName}"></c:out></h1>
+			<h1>Welcome <c:out value="${book.user.userName}"></c:out></h1>
 
       <table class="table">
         <thead>
@@ -34,21 +34,27 @@ pageEncoding="UTF-8"%>
           <th>Posted By: </th>
         </thead>
         <tbody>
-          <c:forEach var="book" items="${books}">
+
             <tr>
-              <td>
-                <a href="/books/${book.id}">
-                ${book.title}</a>
-              </td>
+              <td>${book.title}</td>
               <td>${book.author}</td>
               <td>${book.user.userName}</td>
             </tr>
-          </c:forEach>
+
         </tbody>
       </table>
 
-      <a class="btn btn-primary" href="/books/new">Create a Book</a>
-      <a href="/logout">Logout</a>
-      <a href="/books/new">+ Add a Book to my shelf!</a>
+      <c:choose>
+        <c:when test="${book.user.id == userId}">
+          <a class="btn btn-warning" href="/books/edit/${book.id}">Edit</a>
+          <br>
+          <form action="/books/${book.id}" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete">
+        </c:when>
+      </c:choose>
+      <a href="/books">Back to shelves</a>
+      </form>
+
 	</body>
 </html>

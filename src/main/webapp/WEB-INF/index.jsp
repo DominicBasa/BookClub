@@ -23,7 +23,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
 	</head>
 	<body>
-    ${userId}
+    <!-- ${userId} -->
 		<div class="container">
 			<h1>Book Club</h1>
 			<h5>A place for friends to share thoughts on books. </h5>

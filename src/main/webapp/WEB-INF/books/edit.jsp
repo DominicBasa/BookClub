@@ -26,8 +26,9 @@ pageEncoding="UTF-8"%>
 		<div class="container mt-2" >
 			<div class="col card border-dark p-4">
         <h1>Add a Book</h1>
-        
-          <form:form action="/books" mehtod="post" modelAttribute="book">
+
+              <form:form action="/books/${book.id}" mehtod="post" modelAttribute="book">
+                <input type="hidden" name="_method" value="put">
                 <form:hidden path="user" value="${userId}"></form:hidden>
                 <div class="form-control">
                   <form:label path="title">Title</form:label>
@@ -44,9 +45,11 @@ pageEncoding="UTF-8"%>
                   <form:errors path="myThoughts" />
             <form:input path="myThoughts" />
                 </div>
-                  <input type="submit" value="Add book">
-          </form:form>
-              <a href="/books">Back to the Shelves</a>
+        
+        
+                <input type="submit" value="Edit Book">
+              </form:form>
+              <a href="/books">Back to shelves</a>
       </div>
     </div>
 

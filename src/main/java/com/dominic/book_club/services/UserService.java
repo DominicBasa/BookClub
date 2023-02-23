@@ -67,4 +67,12 @@ public class UserService {
       return false;
     }
   }
+
+  public User getActiveUser(Long id){
+  return userRepo.findById(id).orElse(null);
+  }
+
+  public static Object findById(Long userId) {
+    return null;
+  }
 }
