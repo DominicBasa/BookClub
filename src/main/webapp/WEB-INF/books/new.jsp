@@ -26,30 +26,27 @@ pageEncoding="UTF-8"%>
 		<div class="container mt-2" >
 			<div class="col card border-dark p-4">
         <h1>Add a Book</h1>
-        
-          <form:form action="/books" mehtod="post" modelAttribute="book">
-                <form:hidden path="user" value="${userId}"></form:hidden>
-                <div class="form-control">
-                  <form:label path="title">Title</form:label>
-                  <form:errors path="title" />
-            <form:input path="title" />
-                </div>
-                <div class="form-control">
-                  <form:label path="author">Author</form:label>
-                  <form:errors path="author" />
-            <form:input path="author" />
-                </div>
-                <div class="form-control">
-                  <form:label path="myThoughts">My Thoughts</form:label>
-                  <form:errors path="myThoughts" />
-            <form:input path="myThoughts" />
-                </div>
-                  <input type="submit" value="Add book">
-          </form:form>
-              <a href="/books">Back to the Shelves</a>
+        <form:form action="/books" method="post" modelAttribute="book">
+            <form:hidden path="user" value="${userId}"></form:hidden>
+            <div class="form-control">
+              <form:label path="title">Title</form:label>
+              <form:errors path="title" />
+              <form:input path="title" />
+            </div>
+            <div class="form-control">
+              <form:label path="author">Author</form:label>
+              <form:errors path="author" />
+              <form:input path="author" />
+            </div>
+            <div class="form-control">
+              <form:label path="myThoughts">My Thoughts</form:label>
+              <form:errors path="myThoughts" />
+              <form:input path="myThoughts" />
+            </div>
+            <input type="submit" value="Add book">
+        </form:form>
+        <a href="/books">Back to the Shelves</a>
       </div>
     </div>
-
-
 	</body>
 </html>
